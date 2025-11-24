@@ -7,7 +7,6 @@ Designed to run as a cron job.
 """
 
 import json
-import os
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -75,7 +74,7 @@ def get_newsletter_bookmarks(oauth_session):
 
     # Response format: [user_obj, bookmark1, bookmark2, ...]
     if len(data) > 1:
-        bookmarks = data[1:]  # Skip first element (user object)
+        bookmarks = data[2:]  # Skip first elements (user object)
 
     return bookmarks
 
